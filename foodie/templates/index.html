@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Feeding India</title>
+
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{% static 'css/grid.css' %}">
+  <link rel="stylesheet" href="{% static 'css/master.css' %}">
+  <title></title>
+</head>
+
+<body>
+
+  <header id="showcase">
+
+    <nav>
+      <div>
+        <img src="{% static 'css/images/logowb.png' %}" alt="Feeding India Logo" class="Logo">
+        <input type="checkbox" id="hamburger-toggle">
+        <label class="hamburger-wrapper" for="hamburger-toggle">
+          <span class="hamburger"></span>
+        </label>
+
+        <nav class="navbar">
+          <ul class="nav-list">
+            <li><a href="#showcase">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#section-contact">Join US</a></li>
+          </ul>
+        </nav>
+        <div class="maintext">
+          <h1>Feeding Someone is Greatest Workship</h1>
+          <a class="btn btn-full" href="#section-contact">Join Us</a>
+        </div>
+      </div>
+    </nav>
+
+  </header>
+
+  <section id="about">
+    <div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+        aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+      <img class="work-img" src='images/2.jpg'>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+        aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    </div>
+  </section>
+
+  <section id="section-contact">
+    <div class="row">
+      <h2>Fill the form to Join us</h2>
+    </div>
+    <div class="row">
+      <form class="" method="post">
+
+        {% csrf_token %}
+        {{form}}
+
+        <div class="contact-form">
+          <div class="row">
+            <div class="col span-1-of-3">
+              <label class="lables" for="Name">Name</label>
+            </div>
+            <div class="col span-2-of-3">
+              <input id="formname" class="fields" type="text" name="name" placeholder="Your name">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col span-1-of-3">
+              <label class="lables" for="Email">Email</label>
+            </div>
+            <div class="col span-2-of-3">
+              <input id="formemail" class="fields" type="email" name="email" placeholder="Email">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col span-1-of-3">
+              <label class="lables" for="Contact">Contact</label>
+            </div>
+            <div class="col span-2-of-3">
+              <input id="formphone" class="fields" type="tel" name="phone" placeholder="Phone Number">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col span-1-of-3">
+              <label class="lables">Drop us a line</label>
+            </div>
+            <div class="col span-2-of-3">
+              <textarea id="formline" class="fields" name="line" placeholder="Your Message"></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col span-1-of-3">
+              <label>&nbsp;</label>
+            </div>
+            <div class="col span-2-of-3">
+              <button id="submit-button" type="submit" class="button" name="button">Send it</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+  <footer>
+    <div class="row">
+      <div class="col span-1-of-2">
+        <nav>
+          <ul class="footer-nav">
+            <li><a href="#showcase">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#section-contact">Join Us</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="col span-1-of-2">
+        <nav>
+          <ul class="social-nav">
+            <li><a href='#'><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+            <li><a href='#'><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+            <li><a href='#'><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="row">
+        <p>
+          Copyrigth &copy; <script>
+            document.write(new Date().getFullYear())
+          </script> by Feeding India. All rigths reserved
+        </p>
+        <h4>Developed with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="mailto:gkulk007@protonmail.com?subject=feedback">Gaurav</a></h4>
+      </div>
+
+    </div>
+  </footer>
+  <script>
+    const navbar = document.getElementById("navbar");
+    const navbarToggle = navbar.querySelector(".navbar-toggle");
+
+    function openMobileNavbar() {
+      navbar.classList.add("opened");
+      navbarToggle.setAttribute("aria-label", "Close navigation menu.");
+    }
+
+    function closeMobileNavbar() {
+      navbar.classList.remove("opened");
+      navbarToggle.setAttribute("aria-label", "Open navigation menu.");
+    }
+
+    navbarToggle.addEventListener("click", () => {
+      if (navbar.classList.contains("opened")) {
+        closeMobileNavbar();
+      } else {
+        openMobileNavbar();
+      }
+    });
+
+    const navbarMenu = navbar.querySelector(".navbar-menu");
+    const navbarLinksContainer = navbar.querySelector(".navbar-links");
+
+    navbarLinksContainer.addEventListener("click", (clickEvent) => {
+      clickEvent.stopPropagation();
+    });
+
+    navbarMenu.addEventListener("click", closeMobileNavbar);
+  </script>
+</body>
+
+</html>

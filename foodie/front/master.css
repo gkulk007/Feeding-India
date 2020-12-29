@@ -1,0 +1,334 @@
+/*Basic Settings*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  background-color: #fff;
+  color: #555;
+  font-family: 'Lato', 'Arial', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+section {
+  padding: 80px 0;
+}
+
+#showcase {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("images/cover.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  background-attachment: fixed;
+}
+
+.Logo {
+  height: 100px;
+  width: auto;
+  float: left;
+  margin-top: 20px;
+}
+
+.maintext {
+  clear: both;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 15%;
+  color: #fff;
+}
+
+.maintext h1 {
+  font-size: 60px;
+}
+
+/* navbar */
+#hamburger-toggle {
+  display: none;
+}
+
+.hamburger-wrapper {
+  position: absolute;
+  right: 50px;
+  top: 25px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.hamburger,
+.hamburger::after,
+.hamburger::before {
+  display: inline-block;
+  width: 30px;
+  height: 2px;
+  background-color: #fff;
+  transition: all 0.3s;
+}
+
+.hamburger {
+  position: relative;
+}
+
+.hamburger::after,
+.hamburger::before {
+  content: "";
+  position: absolute;
+}
+
+.hamburger::before {
+  transform: translateY(-10px);
+}
+
+.hamburger::after {
+  transform: translateY(10px);
+}
+
+.navbar {
+  position: absolute;
+  right: 0;
+  width: 500px;
+  height: 100vh;
+  background-image: linear-gradient(120deg, #e67e22, #e67e22);
+  -webkit-clip-path: circle(0 at 100% 0);
+  clip-path: circle(0 at 100% 0);
+  transition: all 0.3s;
+}
+
+.nav-list {
+  position: absolute;
+  list-style: none;
+  right: 180px;
+  top: 40px;
+  transform: translateX(-300px) rotate(20deg);
+  opacity: 0;
+  transition: all 0.3s;
+  transition-delay: 0.3s;
+}
+
+.nav-list li {
+  margin: 50px 0;
+  text-align: center;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  color: #fff;
+  font-family: "Century Gothic";
+  text-transform: uppercase;
+  padding: 10px;
+  transition: all 0.3s;
+}
+
+.nav-list li a:hover {
+  border-bottom: 1px solid #fff;
+}
+
+#hamburger-toggle:checked~.hamburger-wrapper .hamburger {
+  background-color: transparent;
+}
+
+#hamburger-toggle:checked~.hamburger-wrapper .hamburger::before {
+  transform: rotate(225deg);
+  background-color: #fff;
+}
+
+#hamburger-toggle:checked~.hamburger-wrapper .hamburger::after {
+  transform: rotate(-225deg);
+  background-color: #fff;
+}
+
+#hamburger-toggle:checked~.navbar {
+  -webkit-clip-path: circle(500px at 100% 0);
+  clip-path: circle(500px at 100% 0);
+}
+
+#hamburger-toggle:checked~.navbar .nav-list {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.nav-name li {
+  display: inline-block;
+  list-style: none;
+  padding: 20px;
+  font-size: 26px;
+}
+
+.nav-name a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  padding: 10px 30px;
+  font-weight: 300;
+  text-decoration: none;
+  border-radius: 200px;
+  transition: background-color 0.2s, border 0.2s, color 0.2s;
+}
+
+.btn-full:link,
+.btn-full:visited {
+  background-color: #e67e22;
+  border: 1px solid #e67e22;
+  margin-right: 15px;
+  color: #fff;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: #cf6d17;
+}
+
+/* About section */
+#about {
+  background-color: #eaeaea;
+}
+
+#about img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 300px;
+  width: auto;
+}
+
+#about p {
+  padding: 5%;
+}
+
+/* Contact section */
+#section-contact {
+  padding-top: 4em;
+}
+
+#section-contact h2 {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+#section-contact .contact-form {
+  width: 60%;
+  margin: 0 auto;
+}
+
+#section-contact .fields {
+  width: 100%;
+  padding: 10px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+#section-contact .button {
+  display: inline-block;
+  padding: 10px 30px;
+  border-radius: 200px;
+  background-color: #e67e22;
+  border: 1px solid #e67e22;
+  color: #fff;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  padding: 50px;
+  font-size: 20px;
+  /* Hover effect to footer nav  */
+  /* Hover effect to social media logos */
+}
+
+footer .footer-nav {
+  list-style: none;
+  float: left;
+}
+
+footer .social-nav {
+  list-style: none;
+  float: right;
+}
+
+footer p {
+  color: #888;
+  text-align: center;
+  font-size: 90%;
+  margin-top: 90px;
+}
+
+footer .footer-nav li,
+footer .social-nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+footer .footer-nav li:last-child,
+footer .social-nav li:last-child {
+  margin: 0;
+}
+
+footer .footer-nav a:link,
+footer .footer-nav a:visited,
+footer .social-nav a:link,
+footer .social-nav a:visited {
+  text-decoration: none;
+  border: 0;
+  color: #888;
+}
+
+footer .footer-nav a:hover,
+footer .footer-nav a:active {
+  color: #ddd;
+}
+
+footer .social-nav a:link,
+footer .social-nav a:active {
+  font-size: 180%;
+}
+
+footer h4 {
+  padding: 10px;
+  text-align: center;
+}
+
+footer h4 a {
+  text-decoration: none;
+  color: #555555;
+}
+
+footer .footer-nav a:hover,
+footer .footer-nav a:active {
+  color: #ddd;
+}
+
+footer .fa-facebook-square:hover {
+  color: #3b5998;
+}
+
+footer .fa-twitter:hover {
+  color: #00aced;
+}
+
+footer .fa-whatsapp:hover {
+  color: #128C7E;
+}
+
+footer .fa-instagram:hover {
+  color: #517fa4;
+}
+
+footer .footer-text {
+  margin: 0 auto;
+  color: #fff;
+}
